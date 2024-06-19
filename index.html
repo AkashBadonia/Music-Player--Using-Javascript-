@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="musicPlayerCont" class="displayFlex flexColumn">
+      <!-- Header section -->
+      <header id="playerHeader" class="displayFlex">
+        <h1 id="musicPlayerHead">Music Player</h1>
+        <div id="toggleThemeBtnCont">
+          <button id="themeToggleBtnDark" class="themeToggleBtn active">
+            <i class="fa-solid fa-moon"></i> Dark
+          </button>
+          <button id="themeToggleBtnLight" class="themeToggleBtn">
+            <i class="fa-solid fa-sun"></i> Light
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Section -->
+      <main id="playerMain" class="displayFlex">
+        <!-- All songs section -->
+        <section
+          id="allSongsSec"
+          class="playerMainChildSec displayFlex flexColumn"
+        >
+          <!-- Songs filter form -->
+          <div id="filterForm" class="displayFlex">
+            <div id="filterIntro">Filter by genre:</div>
+            <div id="selectFilter">
+              <form action="">
+                <select name="" id="genreList"></select>
+              </form>
+            </div>
+          </div>
+
+          <!-- Filtered songs display container -->
+          <div id="songsDisplayCont">
+            <div class="sectionHeading">
+              <h2>All Songs</h2>
+            </div>
+            <div
+              id="filteredSongs"
+              class="songList displayFlex flexColumn"
+            ></div>
+          </div>
+        </section>
+
+        <!-- Song card section -->
+        <section
+          id="songCardSec"
+          class="playerMainChildSec displayFlex flexColumn"
+        >
+          <!-- Song Intro  -->
+          <div id="songIntro displayFlex flexColumn">
+            <div id="songImgCont">
+              <img src="" alt="" id="songImg" />
+            </div>
+            <div id="songName"></div>
+            <div id="songArtist"></div>
+          </div>
+
+          <!-- Song Controls  -->
+          <div class="audioCont displayFlex alignItemJustifyContentCenter">
+            <audio id="audioPlayer" controls>
+              <source id="audioSource" src="" type="audio/mp3" />
+              Your browser do not support the audio element.
+            </audio>
+          </div>
+          <div id="songControls ">
+            <div id="prevNextSongBtnCont" class="displayFlex">
+              <button id="prevSongBtn">
+                <i class="fa-solid fa-left-long"></i>
+              </button>
+              <button id="nextSongBtn">
+                <i class="fa-solid fa-right-long"></i>
+              </button>
+            </div>
+          </div>
+          <div id="addToPlistBtnCont" class="displayFlex">
+            <button class="button" id="addToPlistBtn">Add to playlist</button>
+          </div>
+        </section>
+
+        <!-- Playlist section  -->
+        <section id="playlistSec" class="playerMainChildSec">
+          <!-- create Playlist form  -->
+          <div id="createPlistFormCont">
+            <form action="" id="createPlistForm" class="displayFlex">
+              <input
+                type="text"
+                placeholder="Enter playlist name"
+                id="inputPlistName"
+              />
+              <button id="createPlistBtn" class="playerButton">
+                Create Playlist
+              </button>
+            </form>
+          </div>
+          <!-- Current playlist section -->
+          <div id="currentPlistCont">
+            <h2 class="sectionHeading">Current Playlist</h2>
+            <div id="plistSongCont"></div>
+          </div>
+          <!-- All Playlist section  -->
+          <div id="allPlistCont">
+            <h2 class="sectionHeading">All Playlists</h2>
+            <div id="allPlistList" class="displayFlex flexColumn"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
